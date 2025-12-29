@@ -1,7 +1,7 @@
 import TelegramBot from 'node-telegram-bot-api';
 
-const TELEGRAM_TOKEN = '8566181062:AAFC2uKxqNH9slELN17_vsueQcsGUs7LsBg';
-const OPENROUTER_KEY = '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';
+const TELEGRAM_TOKEN = 'token telegram';
+const OPENROUTER_KEY = 'api key';
 
 const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: true });
 
