@@ -1,7 +1,7 @@
 import TelegramBot from 'node-telegram-bot-api';
 
-const TELEGRAM_TOKEN = '8566181062:AAFC2uKxqNH9slELN17_vsueQcsGUs7LsBg';
-const OPENROUTER_KEY = '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';
+const TELEGRAM_TOKEN = 'token telgram';
+const OPENROUTER_KEY = 'api key ';
 
 const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: true });
 
@@ -25,7 +25,7 @@ bot.on('message', async (msg) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'meta-llama/llama-3.1-8b-instruct:free',
+          model: 'openrouter/auto',
           messages: [
             {
               role: 'system',
@@ -48,4 +48,11 @@ bot.on('message', async (msg) => {
     await bot.sendMessage(chatId, '❌ خطایی رخ داد');
   }
 });
+
+const res = await fetch(
+  'https://api.telegram.org/bot8566181062:AAFC2uKxqNH9slELN17_vsueQcsGUs7LsBg/getMe'
+);
+
+const text = await res.text();
+console.log(text);
 
